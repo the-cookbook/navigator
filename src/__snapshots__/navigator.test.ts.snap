@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`navigator should throw error when route is not available 1`] = `
+"
+
+Route \\"non-existent-route\\" is not available in declared routes:
+
+• \\"home, profile, search, subscriptions, internalServerError, notFound\\"
+"
+`;
