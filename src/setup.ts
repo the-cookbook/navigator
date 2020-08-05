@@ -1,3 +1,3 @@
-import { NavigatorSetup as Setup } from './settings';
+import { navigatorSetup as setup } from './settings';
 
-export default Setup;
+export default setup;

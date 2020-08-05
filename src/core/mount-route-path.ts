@@ -11,7 +11,7 @@ import getDefaultParamValue from './get-default-param-value';
 const mountRoutePath = (
   path: string,
   params: Parameters = {},
-  queryStrings: QueryStrings,
+  queryStrings: QueryStrings = [],
 ): LocationDescriptorObject => {
   const requiredParams = pathToRegexp
     .parse(path)

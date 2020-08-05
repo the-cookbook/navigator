@@ -22,10 +22,10 @@ const settings = Object.freeze({
   },
 });
 
-const NavigatorSetup = ({ history, routes }: Store): void => {
+const navigatorSetup = ({ history, routes }: Store): void => {
   store.history = history;
   store.routes = routes.map((route) => ({ ...route, name: parse.toCamelCase(route.name) }));
 };
 
-export { NavigatorSetup };
+export { navigatorSetup };
 export default settings;

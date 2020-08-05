@@ -41,7 +41,7 @@ const queryStringToObject = (search: string): Record<string, string> =>
       const { 0: key, 1: value } = query.split('=');
 
       if (key) {
-        acc[toCamelCase(key)] = value;
+        acc[toCamelCase(key)] = decodeURIComponent(value);
       }
 
       return acc;
