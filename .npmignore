@@ -1,9 +1,10 @@
 .git
 .idea
-.circleci
-.github
+.circleci/
+.github/
 configurations/
 cypress/
+demo/
 scripts/
 src/
 .browserslistrc
@@ -20,6 +21,7 @@ babel.config.js
 commitlint.config.js
 cypress.json
 jest.config.js
+navigator.png
 release.config.js
 rollup.config.js
 tsconfig.*

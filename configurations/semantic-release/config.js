@@ -18,13 +18,20 @@ module.exports = {
     [
       '@semantic-release/github',
       {
-        assets: [{ path: 'release/*.tgz' }, { path: 'lib/navigator.min.js*(.map)', label: 'UMD build minified' }],
+        assets: [
+          { path: 'release/*.tgz' },
+          { path: 'lib/navigator.js*(.map)', label: 'CJS build' },
+          { path: 'lib/navigator.min.js*(.map)', label: 'CJS build minified' },
+          { path: 'lib/navigator.umd.js*(.map)', label: 'UMD build' },
+          { path: 'lib/navigator.umd.min.js*(.map)', label: 'UMD build minified' },
+        ],
       },
     ],
     [
       '@semantic-release/git',
       {
         message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
+        assets: ['CHANGELOG.md', 'AUTHORS.md', 'package.json', 'yarn.lock', 'npm-shrinkwrap.json']
       },
     ],
   ],

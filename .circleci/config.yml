@@ -160,6 +160,12 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
+      - add_ssh_keys:
+          fingerprints:
+            - $GITHUB_FINGERPRINT
+      - run:
+          name: Set git upstream
+          command: git branch --set-upstream-to origin/${CIRCLE_BRANCH}
       - run:
           name: Running semantic-release workflow
           command: npx semantic-release
@@ -189,13 +195,13 @@ workflows:
             - test_node_10
             - test_node_12
             - test_node_14
-#      - release:
-#          requires:
-#            - build
-#          filters:
-#            branches:
-#              only:
-#                - master
-#                - next
-#                - pre/rc
-#                - beta
+      - release:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
+                - next
+                - pre/rc
+                - beta
